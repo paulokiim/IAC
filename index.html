@@ -1,166 +1,421 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <title>Avaliação de Funcionários</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		* {
-            box-sizing: bor der-box;
-        }
-
-		.row::after {
-			content: "";
-			clear: both;
-			display: table;
+	<head>
+	  <title>Avaliação de Funcionários</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	  <style>
+		/* Remove margens e bordas arredondadas */ 
+		.navbar {
+		  margin-bottom: 0px;
+		  border-radius: 0px;
+		}
+		
+		footer {
+		  background-color: rgb(204, 227, 247);
+		  padding: 2%;
 		}
 
-		[class*="col-"] {
-			float: left;
-			padding: 15px;
-			border: 1px solid black;
+		.jumbotron {
+		  margin-bottom: 0px;
 		}
 
-		.col-1 {width: 8.33%;}
-		.col-2 {width: 16.66%;}
-		.col-3 {width: 25%;}
-		.col-4 {width: 33.33%;}
-		.col-5 {width: 41.66%;}
-		.col-6 {width: 50%;}
-		.col-7 {width: 58.33%;}
-		.col-8 {width: 66.66%;}
-		.col-9 {width: 75%;}
-		.col-10 {width: 83.33%;}
-		.col-11 {width: 95.66%;}
-		.col-12 {width: 100%;}
-        
-        div.col-11 {
-            text-align: center;
-        }
-        div.centro {
-            text-align: center;
-        }
-        .tabelas table {
-            margin: auto;
-        }
-        .tabelas td {
-            padding: 18px;
-        }
-	</style>
-</head>
-<body>
-	<div class="col-11">
-		<h1><strong>Ola! Inicie a avaliação dos seus funcionários</strong></h1>
-		<button>Avaliar</button>
-	</div>
-    <br><br>
-    <br><br>
-    <div class="centro">
-        <h2>Nome do funcionario:</h2>
-        <input id="nomeFunc" type="text"></input>
-        
-        <h2>Quao rapido o funcionario entrega seus projetos?</h2>
-        <h5>(1 se atrasa muito, 5 se entrega no prazo e 10 se adianta muito)</h5>
-        <div class="tabelas">
-            <table>
-                <tr>
-                    <td >1<p></p><input type="radio" name="rapidez" value="1" style="text-align: center"></input></td>
-                    <td>2<p></p><input type="radio" name="rapidez" value="2"></input></td>
-                    <td>3<p></p><input type="radio" name="rapidez" value="3"></input></td>
-                    <td>4<p></p><input type="radio" name="rapidez" value="4"></input></td>
-                    <td>5<p></p><input type="radio" name="rapidez" value="5"></input></td>
-                    <td>6<p></p><input type="radio" name="rapidez" value="6"></input></td>
-                    <td>7<p></p><input type="radio" name="rapidez" value="7"></input></td>
-                    <td>8<p></p><input type="radio" name="rapidez" value="8"></input></td>
-                    <td>9<p></p><input type="radio" name="rapidez" value="9"></input></td>
-                    <td>10<p></p><input type="radio" name="rapidez" value="10"></input></td>
-                </tr>
-            </table>
-        </div>
-        <br><br>
-        <h2>Qual a qualidade dos seus projetos?</h2>
-        <h5>(1 se qualidade baixa, 5 se qualidade razoavel e 10 se qualidade boa)</h5>
-        <div class="tabelas">
-            <table>
-                <tr>
-                    <td>1<p></p><input type="radio" name="qualidade" value="1"></input></td>
-                    <td>2<p></p><input type="radio" name="qualidade" value="2"></input></td>
-                    <td>3<p></p><input type="radio" name="qualidade" value="3"></input></td>
-                    <td>4<p></p><input type="radio" name="qualidade" value="4"></input></td>
-                    <td>5<p></p><input type="radio" name="qualidade" value="5"></input></td>
-                    <td>6<p></p><input type="radio" name="qualidade" value="6"></input></td>
-                    <td>7<p></p><input type="radio" name="qualidade" value="7"></input></td>
-                    <td>8<p></p><input type="radio" name="qualidade" value="8"></input></td>
-                    <td>9<p></p><input type="radio" name="qualidade" value="9"></input></td>
-                    <td>10<p></p><input type="radio" name="qualidade" value="10"></input></td>
-                </tr>
-            </table>
-        </div>
-        <br><br>
-        <h2>O funcionario tenta minimizar o custo do projeto?</h2>
-        <h5>(1 se nao tenta, 5 se tenta e 10 se minimiza sempre)</h5>
-        <div class="tabelas">
-            <table>
-                <tr>
-                    <td>1<p></p><input type="radio" name="minimiza" value="1"></input></td>
-                    <td>2<p></p><input type="radio" name="minimiza" value="2"></input></td>
-                    <td>3<p></p><input type="radio" name="minimiza" value="3"></input></td>
-                    <td>4<p></p><input type="radio" name="minimiza" value="4"></input></td>
-                    <td>5<p></p><input type="radio" name="minimiza" value="5"></input></td>
-                    <td>6<p></p><input type="radio" name="minimiza" value="6"></input></td>
-                    <td>7<p></p><input type="radio" name="minimiza" value="7"></input></td>
-                    <td>8<p></p><input type="radio" name="minimiza" value="8"></input></td>
-                    <td>9<p></p><input type="radio" name="minimiza" value="9"></input></td>
-                    <td>10<p></p><input type="radio" name="minimiza" value="10"></input></td>
-                </tr>
-            </table>
-        </div>
-        <br><br>
-        <h2>O funcionario consegue fragmentar um grande problema em varios menores?</h2>
-        <h5>(1 se nao consegue, 5 se tenta e 10 se consegue)</h5>
-        <div class="tabelas">
-            <table>
-                <tr>
-                    <td>1<p></p><input type="radio" name="fragmenta" value="1"></input></td>
-                    <td>2<p></p><input type="radio" name="fragmenta" value="2"></input></td>
-                    <td>3<p></p><input type="radio" name="fragmenta" value="3"></input></td>
-                    <td>4<p></p><input type="radio" name="fragmenta" value="4"></input></td>
-                    <td>5<p></p><input type="radio" name="fragmenta" value="5"></input></td>
-                    <td>6<p></p><input type="radio" name="fragmenta" value="6"></input></td>
-                    <td>7<p></p><input type="radio" name="fragmenta" value="7"></input></td>
-                    <td>8<p></p><input type="radio" name="fragmenta" value="8"></input></td>
-                    <td>9<p></p><input type="radio" name="fragmenta" value="9"></input></td>
-                    <td>10<p></p><input type="radio" name="fragmenta" value="10"></input></td>
-                </tr>
-            </table>
-        </div>
-        <br><br>
-        <br><br>
-        <button>Cadastrar mais funcionarios</button>
-        <button>Concluido</button>
-        <br><br>
-        <br><br>
-        <br><br>
-        <br><br>
-    </div>
-    <div class="resultado">
-        <table>
-            <tr>
-                <th>Funcionário</th>
-                <th>Rapidez</th>
-                <th>Qualidade</th>
-                <th>Minimiza custo</th>
-                <th>Fragmentar problemas</th>
-                <th>Valor Total</th>
-            </tr>
-            <tr>
-                <th>João da Silva</th>
-                <th>8</th>
-                <th>7</th>
-                <th>4</th>
-                <th>9</th>
-                <th>6</th>
-            </tr>
-        </table>
-    </div>    
-</body>
+		input[type=text] {
+		  border: 2px solid rgb(204, 227, 247);
+		  border-radius: 10px;
+		  text-align: center;
+		}
+
+		input[type=radio] {
+
+		}
+		
+		.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2,
+		.col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7,
+		.col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11,
+		.col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5,
+		.col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1,
+		.col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3,
+		.col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8,
+		.col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12,
+		.col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
+		.col-xs-7, .col-xs-8, .col-xs-9
+		{
+			position: relative;
+			min-height: 1px;
+			padding-right: 0px;
+			padding-left: 0px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		
+		button {
+			background-color: #507cdf;
+			border: 2px solid #0b31ba;
+			border-radius: 10px;
+			padding: 15px 32px;
+			text-align: center;
+			font-size: 20px;
+		}
+
+		div.tabelaResultado table{
+			margin: auto;
+			border-collapse: collapse;
+		}
+
+		div.tabelaResultado th {
+			border: 1px solid #0b31ba;
+			width: 120px;
+			height: 50px;
+			text-align: center;
+			background-color:  #a1b0da;
+		}
+
+	  </style>
+	</head>
+	<body>
+
+		<div class="jumbotron">
+		  <div class="container text-center">
+			<h1><font FACE= "Oswald">Avaliação de Funcionários</font></h1>
+		  </div>
+		</div>
+
+		<div class="container-fluid bg-3 text-center" >
+		  <h3><font FACE= "Oswald">Nome do funcionário:</font></h3>
+		  <input type="text" placeholder="Nome do funcionário" id="input_nome" style="width:250px">
+		</div>
+
+		<br>
+
+		<div class="container-fluid bg-3 text-center" >    
+		  <div class="row">
+				<h3><font FACE= "Oswald">Quão rápido o funcionário entrega seus projetos?</font></h3>
+				<h4><font  FACE="Oswald" >(1: sempre atrasa, 5: no prazo, 9: sempre adianta)!</font></h4>
+		  </div>
+
+		  <div class="row">
+		  
+			<div class="col-sm-4">
+			  <div style="background-color: #507cdf; width: 32%; display: inline-block;">
+				<b>1</b><br>
+				<input type="radio" name="rapidez" value="1">
+			  </div>
+			  <div style="background-color: #507cdf; width: 32%; display: inline-block;">
+				<b>2</b><br>
+				<input type="radio" name="rapidez" value="2">
+			  </div>
+			  <div style="background-color: #507cdf; width: 32%; display: inline-block;">
+				<b>3</b><br>
+				<input type="radio" name="rapidez" value="3">
+			  </div>
+			</div>
+			
+			<div class="col-sm-4">
+			  <div style="background-color: #507cdf; width: 32%; display: inline-block;">
+				<b>4</b><br>
+				<input type="radio" name="rapidez" value="4">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>5</b><br>
+				<input type="radio" name="rapidez" value="5">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>6</b><br>
+				<input type="radio" name="rapidez" value="6">
+				</div>
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<input type="text" placeholder="Comentário" id="input_nome" style="width:250px">
+			</div>
+			
+			<div class="col-sm-4">
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>7</b><br>
+				<input type="radio" name="rapidez" value="7">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>8</b><br>
+				<input type="radio" name="rapidez" value="8">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>9</b><br>
+				<input type="radio" name="rapidez" value="9">
+				</div>
+				
+			</div>
+			
+		  </div>
+		</div>
+
+		<br>
+
+		<div class="container-fluid bg-3 text-center" >    
+		  <div class="row">
+			  <h3><font FACE= "Oswald">Qual a qualidade dos projetos do funcionário?</font></h3>
+			  <h4><font FACE= "Oswald">(1: piores que esperado, 5: como esperado, 9: melhores que esperado)</font></h4>
+		  </div>
+
+		  <div class="row">
+		  
+			<div class="col-sm-4">
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>1</b><br>
+				<input type="radio" name="qualidade" value="1">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>2</b><br>
+				<input type="radio" name="qualidade" value="2">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>3</b><br>
+				<input type="radio" name="qualidade" value="3">
+			  </div>
+			</div>
+			
+			<div class="col-sm-4">
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>4</b><br>
+				<input type="radio" name="qualidade" value="4">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>5</b><br>
+				<input type="radio" name="qualidade" value="5">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>6</b><br>
+				<input type="radio" name="qualidade" value="6">
+				</div>
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<input type="text" placeholder="Comentário" id="input_nome" style="width:250px">
+			</div>
+			
+			<div class="col-sm-4">
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>7</b><br>
+				<input type="radio" name="qualidade" value="7">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>8</b><br>
+				<input type="radio" name="qualidade" value="8">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>9</b><br>
+				<input type="radio" name="qualidade" value="9">
+			  </div>
+			</div>
+			
+		  </div>
+		</div>
+
+		<br>
+
+		<div class="container-fluid bg-3 text-center" >    
+		  <div class="row">
+			  <h3><font FACE= "Oswald">O funcionário tenta minimizar o custo do projeto?</font></h3>
+			  <h4><font FACE= "Oswald">(1: nunca tenta, 5: tenta às vezes, 9: sempre tenta)</font></h4>
+		  </div>
+
+		  <div class="row">
+		  
+			<div class="col-sm-4">
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>1</b><br>
+				<input type="radio" name="custo" value="1">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>2</b><br>
+				<input type="radio" name="custo" value="2">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>3</b><br>
+				<input type="radio" name="custo" value="3">
+			  </div>
+			</div>
+			
+			<div class="col-sm-4">
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>4</b><br>
+				<input type="radio" name="custo" value="4">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>5</b><br>
+				<input type="radio" name="custo" value="5">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>6</b><br>
+				<input type="radio" name="custo" value="6">
+				</div>
+				<p><font FACE= "Oswald">Observação:</font></p>
+				<input type="text" placeholder="Comentário" id="input_nome" style="width:250px">
+			</div>
+			
+			<div class="col-sm-4">
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>7</b><br>
+				<input type="radio" name="custo" value="7">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>8</b><br>
+				<input type="radio" name="custo" value="8">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>9</b><br>
+				<input type="radio" name="custo" value="9">
+			  </div>
+			</div>
+			
+		  </div>
+		</div>
+
+		<br>
+
+		<div class="container-fluid bg-3 text-center" >    
+		  <div class="row">
+			  <h3><font FACE= "Oswald">O funcionário consegue fragmentar um grande problema em vários menores?</font></h3>
+			  <h4><font FACE= "Oswald">(1: nunca consegue, 5: às vezes consegue, 9: sempre consegue)</font></h4>
+		  </div>
+
+		  <div class="row">
+		  
+			<div class="col-sm-4">
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>1</b><br>
+				<input type="radio" name="problemas" value="1">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>2</b><br>
+				<input type="radio" name="problemas" value="2">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>3</b><br>
+				<input type="radio" name="problemas" value="3">
+			  </div>
+			</div>
+			
+			<div class="col-sm-4">
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>4</b><br>
+				<input type="radio" name="problemas" value="4">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>5</b><br>
+				<input type="radio" name="problemas" value="5">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>6</b><br>
+				<input type="radio" name="problemas" value="6">
+				</div>
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<input type="text" placeholder="Comentário" id="input_nome" style="width:250px">
+			</div>
+			
+			<div class="col-sm-4">
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>7</b><br>
+				<input type="radio" name="problemas" value="7">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+			   <b>8</b><br>
+				<input type="radio" name="problemas" value="8">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 32%; display: inline-block;">
+				<b>9</b><br>
+				<input type="radio" name="problemas" value="9">
+			  </div>
+			</div>
+			
+		  </div>
+		</div>
+
+		<br>
+		<br>
+		
+		<div class="jumbotron">
+			<div class="container-fluid bg-3 text-center" >    
+				<div class="row">
+				  <h2><font FACE='Oswald'>Falta cadastrar algum funcionário?</font></h2>
+				</div>
+				<div class="row"">
+					<div class="col-sm-3">
+						<p style="display:none">Gambiarra aplicada aqui</p>
+					</div>
+					<div class="col-sm-3">
+						<div style="width: 32%; display: inline-block;">
+							<button>Sim</button>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div style="width: 32%; display: inline-block;">
+							<button>Não</button>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<p style="display:none">Gambiarra aplicada aqui</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h1 style="text-align: center;"><strong><font FACE='Oswald'>Tabela Resultado da Avaliação</font></strong></h1>
+		<div class="tabelaResultado">
+			<table>
+				<tr>
+						<th>Funcionário</th>
+						<th>Rapidez </th>
+						<th>Qualidade </th>
+						<th>Minimiza custo </th>
+						<th>Fragmentar problemas </th>
+						<th>Valor Total </th>
+				</tr>
+				<tr>
+						<th>João da Silva</th>
+						<th>8</th>
+						<th>7</th>
+						<th>4</th>
+						<th>9</th>
+						<th>6</th>
+				</tr>
+				<tr>
+						<th>Roberto da Silva</th>
+						<th>8</th>
+						<th>7</th>
+						<th>4</th>
+						<th>9</th>
+						<th>6</th>
+					</tr>
+					<tr>
+						<th>Silvia da Silva</th>
+						<th>8</th>
+						<th>7</th>
+						<th>4</th> 
+						<th>9</th>
+						<th>6</th>
+				</tr>
+				<tr>
+						<th>Guilherme da Silva</th>
+						<th>8</th>
+						<th>7</th>
+						<th>4</th>
+						<th>9</th>
+						<th>6</th>
+			</tr>
+			<tr>
+						<th>Joana da Silva</th>
+						<th>8</th>
+						<th>7</th>
+						<th>4</th>
+						<th>9</th>
+						<th>6</th>
+
+			</tr>
+			</table>
+		</div>
+
+		<br><br>
+
+		<footer class="container-fluid text-center">
+		  <p>© Galvão's Team 2019.</p>
+		</footer>
+
+	</body>
+</html>
