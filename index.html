@@ -4,7 +4,8 @@
 	  <title>Avaliação de Funcionários</title>
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="index.js"></script>
 	  <style>
 		/* Remove margens e bordas arredondadas */ 
 		.navbar {
@@ -25,10 +26,15 @@
 		  border: 2px solid rgb(204, 227, 247);
 		  border-radius: 10px;
 		  text-align: center;
+			width:250px;
 		}
 
-		input[type=radio] {
-
+		textarea {
+		  border: 2px solid rgb(204, 227, 247);
+		  border-radius: 10px;
+			width:250px;
+			height:100px;
+			text-align: center;
 		}
 		
 		.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2,
@@ -84,7 +90,7 @@
 
 		<div class="container-fluid bg-3 text-center" >
 		  <h3><font FACE= "Oswald">Nome do funcionário:</font></h3>
-		  <input type="text" placeholder="Nome do funcionário" id="input_nome" style="width:250px">
+		  <input type="text" placeholder="Nome do funcionário" id="input_nome">
 		</div>
 
 		<br>
@@ -125,8 +131,6 @@
 				<b>6</b><br>
 				<input type="radio" name="rapidez" value="6">
 				</div>
-				<p><font FACE= "Oswald">Observaçao:</font></p>
-				<input type="text" placeholder="Comentário" id="input_nome" style="width:250px">
 			</div>
 			
 			<div class="col-sm-4">
@@ -145,6 +149,11 @@
 				
 			</div>
 			
+			</div>
+			
+			<div class="row">
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<textarea placeholder="Comentário" id="obs_rapidez"></textarea>
 		  </div>
 		</div>
 
@@ -186,8 +195,6 @@
 				<b>6</b><br>
 				<input type="radio" name="qualidade" value="6">
 				</div>
-				<p><font FACE= "Oswald">Observaçao:</font></p>
-				<input type="text" placeholder="Comentário" id="input_nome" style="width:250px">
 			</div>
 			
 			<div class="col-sm-4">
@@ -205,6 +212,11 @@
 			  </div>
 			</div>
 			
+			</div>
+			
+			<div class="row">
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<textarea placeholder="Comentário" id="obs_qualidade"></textarea>
 		  </div>
 		</div>
 
@@ -246,8 +258,6 @@
 				<b>6</b><br>
 				<input type="radio" name="custo" value="6">
 				</div>
-				<p><font FACE= "Oswald">Observação:</font></p>
-				<input type="text" placeholder="Comentário" id="input_nome" style="width:250px">
 			</div>
 			
 			<div class="col-sm-4">
@@ -265,6 +275,11 @@
 			  </div>
 			</div>
 			
+			</div>
+			
+			<div class="row">
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<textarea placeholder="Comentário" id="obs_custo"></textarea>
 		  </div>
 		</div>
 
@@ -306,8 +321,6 @@
 				<b>6</b><br>
 				<input type="radio" name="problemas" value="6">
 				</div>
-				<p><font FACE= "Oswald">Observaçao:</font></p>
-				<input type="text" placeholder="Comentário" id="input_nome" style="width:250px">
 			</div>
 			
 			<div class="col-sm-4">
@@ -325,6 +338,11 @@
 			  </div>
 			</div>
 			
+			</div>
+			
+			<div class="row">
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<textarea placeholder="Comentário" id="obs_problemas"></textarea>
 		  </div>
 		</div>
 
@@ -342,12 +360,12 @@
 					</div>
 					<div class="col-sm-3">
 						<div style="width: 32%; display: inline-block;">
-							<button>Sim</button>
+							<button id="func_sim" onclick="adicionaFuncionario()">Sim</button>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div style="width: 32%; display: inline-block;">
-							<button>Não</button>
+							<button id="func_nao" onclick="adicionaFuncionario() ; printaResultados()">Não</button>
 						</div>
 					</div>
 					<div class="col-sm-3">
