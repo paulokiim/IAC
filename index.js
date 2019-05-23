@@ -16,33 +16,33 @@ function adicionaFuncionario () {
     
     document.getElementsByName("rapidez").forEach(radio => {
         if(radio.checked){
-            rapidez = radio.value;
+            rapidez = parseInt (radio.value);
             num_atributos++;
         }
     });
 
     document.getElementsByName("qualidade").forEach(radio => {
         if(radio.checked){
-            qualidade = radio.value;
+            qualidade = parseInt (radio.value);
             num_atributos++;
         }
     });
 
     document.getElementsByName("custo").forEach(radio => {
         if(radio.checked){
-            custo = radio.value;
+            custo = parseInt (radio.value);
             num_atributos++;
         }
     });
 
     document.getElementsByName("problemas").forEach(radio => {
         if(radio.checked){
-            problemas = radio.value;
+            problemas = parseInt(radio.value);
             num_atributos++;
         }
     });
 
-    media = (rapidez + qualidade + custo + problemas) / num_atributos; //erro sem sentido
+    media = ((rapidez + qualidade + custo + problemas) / num_atributos);
 
     var funcionario = [nome,rapidez,obs_rapidez,qualidade,obs_qualidade,custo,obs_custo,problemas,obs_problemas,media];
 
