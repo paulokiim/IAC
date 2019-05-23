@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Avaliação de Funcionários</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		* {
+            box-sizing: bor der-box;
+        }
+
+		.row::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+
+		[class*="col-"] {
+			float: left;
+			padding: 15px;
+			border: 1px solid black;
+		}
+
+		.col-1 {width: 8.33%;}
+		.col-2 {width: 16.66%;}
+		.col-3 {width: 25%;}
+		.col-4 {width: 33.33%;}
+		.col-5 {width: 41.66%;}
+		.col-6 {width: 50%;}
+		.col-7 {width: 58.33%;}
+		.col-8 {width: 66.66%;}
+		.col-9 {width: 75%;}
+		.col-10 {width: 83.33%;}
+		.col-11 {width: 95.66%;}
+		.col-12 {width: 100%;}
+        
+        div.col-11 {
+            text-align: center;
+        }
+        div.centro {
+            text-align: center;
+        }
+        .tabelas table {
+            margin: auto;
+        }
+        .tabelas td {
+            padding: 18px;
+        }
+	</style>
+</head>
+<body>
+	<div class="col-11">
+		<h1><strong>Ola! Inicie a avaliação dos seus funcionários</strong></h1>
+		<button>Avaliar</button>
+	</div>
+    <br><br>
+    <br><br>
+    <div class="centro">
+        <h2>Nome do funcionario:</h2>
+        <input id="nomeFunc" type="text"></input>
+        
+        <h2>Quao rapido o funcionario entrega seus projetos?</h2>
+        <h5>(1 se atrasa muito, 5 se entrega no prazo e 10 se adianta muito)</h5>
+        <div class="tabelas">
+            <table>
+                <tr>
+                    <td >1<p></p><input type="radio" name="rapidez" value="1" style="text-align: center"></input></td>
+                    <td>2<p></p><input type="radio" name="rapidez" value="2"></input></td>
+                    <td>3<p></p><input type="radio" name="rapidez" value="3"></input></td>
+                    <td>4<p></p><input type="radio" name="rapidez" value="4"></input></td>
+                    <td>5<p></p><input type="radio" name="rapidez" value="5"></input></td>
+                    <td>6<p></p><input type="radio" name="rapidez" value="6"></input></td>
+                    <td>7<p></p><input type="radio" name="rapidez" value="7"></input></td>
+                    <td>8<p></p><input type="radio" name="rapidez" value="8"></input></td>
+                    <td>9<p></p><input type="radio" name="rapidez" value="9"></input></td>
+                    <td>10<p></p><input type="radio" name="rapidez" value="10"></input></td>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+        <h2>Qual a qualidade dos seus projetos?</h2>
+        <h5>(1 se qualidade baixa, 5 se qualidade razoavel e 10 se qualidade boa)</h5>
+        <div class="tabelas">
+            <table>
+                <tr>
+                    <td>1<p></p><input type="radio" name="qualidade" value="1"></input></td>
+                    <td>2<p></p><input type="radio" name="qualidade" value="2"></input></td>
+                    <td>3<p></p><input type="radio" name="qualidade" value="3"></input></td>
+                    <td>4<p></p><input type="radio" name="qualidade" value="4"></input></td>
+                    <td>5<p></p><input type="radio" name="qualidade" value="5"></input></td>
+                    <td>6<p></p><input type="radio" name="qualidade" value="6"></input></td>
+                    <td>7<p></p><input type="radio" name="qualidade" value="7"></input></td>
+                    <td>8<p></p><input type="radio" name="qualidade" value="8"></input></td>
+                    <td>9<p></p><input type="radio" name="qualidade" value="9"></input></td>
+                    <td>10<p></p><input type="radio" name="qualidade" value="10"></input></td>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+        <h2>O funcionario tenta minimizar o custo do projeto?</h2>
+        <h5>(1 se nao tenta, 5 se tenta e 10 se minimiza sempre)</h5>
+        <div class="tabelas">
+            <table>
+                <tr>
+                    <td>1<p></p><input type="radio" name="minimiza" value="1"></input></td>
+                    <td>2<p></p><input type="radio" name="minimiza" value="2"></input></td>
+                    <td>3<p></p><input type="radio" name="minimiza" value="3"></input></td>
+                    <td>4<p></p><input type="radio" name="minimiza" value="4"></input></td>
+                    <td>5<p></p><input type="radio" name="minimiza" value="5"></input></td>
+                    <td>6<p></p><input type="radio" name="minimiza" value="6"></input></td>
+                    <td>7<p></p><input type="radio" name="minimiza" value="7"></input></td>
+                    <td>8<p></p><input type="radio" name="minimiza" value="8"></input></td>
+                    <td>9<p></p><input type="radio" name="minimiza" value="9"></input></td>
+                    <td>10<p></p><input type="radio" name="minimiza" value="10"></input></td>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+        <h2>O funcionario consegue fragmentar um grande problema em varios menores?</h2>
+        <h5>(1 se nao consegue, 5 se tenta e 10 se consegue)</h5>
+        <div class="tabelas">
+            <table>
+                <tr>
+                    <td>1<p></p><input type="radio" name="fragmenta" value="1"></input></td>
+                    <td>2<p></p><input type="radio" name="fragmenta" value="2"></input></td>
+                    <td>3<p></p><input type="radio" name="fragmenta" value="3"></input></td>
+                    <td>4<p></p><input type="radio" name="fragmenta" value="4"></input></td>
+                    <td>5<p></p><input type="radio" name="fragmenta" value="5"></input></td>
+                    <td>6<p></p><input type="radio" name="fragmenta" value="6"></input></td>
+                    <td>7<p></p><input type="radio" name="fragmenta" value="7"></input></td>
+                    <td>8<p></p><input type="radio" name="fragmenta" value="8"></input></td>
+                    <td>9<p></p><input type="radio" name="fragmenta" value="9"></input></td>
+                    <td>10<p></p><input type="radio" name="fragmenta" value="10"></input></td>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+        <br><br>
+        <button>Cadastrar mais funcionarios</button>
+        <button>Concluido</button>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+    </div>
+    <div class="resultado">
+        <table>
+            <tr>
+                <th>Funcionário</th>
+                <th>Rapidez</th>
+                <th>Qualidade</th>
+                <th>Minimiza custo</th>
+                <th>Fragmentar problemas</th>
+                <th>Valor Total</th>
+            </tr>
+            <tr>
+                <th>João da Silva</th>
+                <th>8</th>
+                <th>7</th>
+                <th>4</th>
+                <th>9</th>
+                <th>6</th>
+            </tr>
+        </table>
+    </div>    
+</body>
