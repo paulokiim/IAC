@@ -4,4 +4,9 @@ function submit () {
     if (usuario == "admin" && senha == "admin") {
         window.location.href = "index.html";
     }
+    else {
+        document.getElementById ("usuario").value = "";
+        document.getElementById ("senha").value = "";
+        alert("Usuário e senha inválidos!");
+    }
 }
