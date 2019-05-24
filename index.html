@@ -6,6 +6,7 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		<script src="index.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
 	  <style>
 		/* Remove margens e bordas arredondadas */ 
 		.navbar {
@@ -375,7 +376,7 @@
 			</div>
 		</div>
 		<h1 style="text-align: center;"><strong><font FACE='Oswald'>Tabela Resultado da Avaliação</font></strong></h1>
-		<div class="tabelaResultado">
+		<div class="tabelaResultado" id="result">
 			<table id="resultadoTabela">
 				<tr>
 						<th>Funcionário</th>
@@ -391,6 +392,12 @@
 						<th>Imprimir</th>
 				</tr>
 			</table>
+		</div>
+
+		<br><br>
+		
+		<div class="row" style="text-align: center">
+			<button onclick="geraPDFTodos()">Imprimir</button>
 		</div>
 
 		<br><br>
