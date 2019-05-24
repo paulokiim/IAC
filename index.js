@@ -92,13 +92,34 @@ function printaResultados () {
             texto = document.createTextNode(funcionarios[i][j])
             novaCelula.appendChild (texto);
         }
-
-        novaCelula = novaColuna.insertCell(funcionarios.length);
-        //Aqui entra a funcao que gera link pro pdf
+        novaCelula = novaColuna.insertCell(funcionarios[i].length);
+        texto = document.createTextNode(i+1+".pdf");
         novaCelula.appendChild (texto);
     }
 
     for (let i = 0; i < funcionarios.length; i++){
         auxFuncionarios.push(funcionarios.pop(i));
     }
+}
+
+function geraPDFTodos () {
+    let doc = new jsPDF();
+    let k = 1;
+    for(let i = 0; i < auxFuncionarios.length; i ++) {
+        for (let j = 0; j < auxFuncionarios[i].length; j++){
+            if (j === 0) doc.text(20, 30 + (k * 10), ' Nome: ' + String (auxFuncionarios[i][j]));
+            else if (j === 1) doc.text(20, 30 + (k * 10), ' Rapidez: ' + String (auxFuncionarios[i][j]));
+            else if (j === 2) doc.text(20, 30 + (k * 10), ' Obs Rapidez: ' + String (auxFuncionarios[i][j]));
+            else if (j === 3) doc.text(20, 30 + (k * 10), ' Qualidade: ' + String (auxFuncionarios[i][j]));
+            else if (j === 4) doc.text(20, 30 + (k * 10), ' Obs Qualidade: ' + String (auxFuncionarios[i][j]));
+            else if (j === 5) doc.text(20, 30 + (k * 10), ' Minimiza Custo: ' + String (auxFuncionarios[i][j]));
+            else if (j === 6) doc.text(20, 30 + (k * 10), ' Obs Minimiza Custo: ' + String (auxFuncionarios[i][j]));
+            else if (j === 7) doc.text(20, 30 + (k * 10), ' Fragmenta Problemas: ' + String (auxFuncionarios[i][j]));
+            else if (j === 8) doc.text(20, 30 + (k * 10), ' Obs Fragmenta Problemas: ' + String (auxFuncionarios[i][j]));
+            else if (j === 9) doc.text(20, 30 + (k * 10), ' Valor Total: ' + String (auxFuncionarios[i][j]));
+            k++;
+        }
+        k+=3;
+    }
+    doc.save ("Funcionario.pdf");
 }
