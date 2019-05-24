@@ -1,4 +1,5 @@
 var funcionarios = []; //aqui ficaraum funcionarios e seus atributos
+var auxFuncionarios = [];
 
 function adicionaFuncionario () {
     var nome = document.getElementById("input_nome").value;
@@ -82,14 +83,22 @@ function adicionaFuncionario () {
 function printaResultados () {
     let tabela = document.getElementById("resultadoTabela");
 
-    let novaColuna = tabela.insertRow(-1);
-
     let texto;
+    let novaCelula;
     for (let i = 0; i < funcionarios.length; i++) {
-        for (let j = 0; j < funcionarios[0].length; j++) {
-            let novaCelula = novaColuna.insertCell(j);
-            texto = document.createTextNode(funcionarios[i][j]);
+        let novaColuna = tabela.insertRow(-1);
+        for (let j = 0; j < funcionarios[i].length; j++) {
+            novaCelula = novaColuna.insertCell(j);
+            texto = document.createTextNode(funcionarios[i][j])
             novaCelula.appendChild (texto);
         }
+
+        novaCelula = novaColuna.insertCell(funcionarios.length);
+        //Aqui entra a funcao que gera link pro pdf
+        novaCelula.appendChild (texto);
+    }
+
+    for (let i = 0; i < funcionarios.length; i++){
+        auxFuncionarios.push(funcionarios.pop(i));
     }
 }
