@@ -80,5 +80,16 @@ function adicionaFuncionario () {
 
 }
 function printaResultados () {
+    let tabela = document.getElementById("resultadoTabela");
 
+    let novaColuna = tabela.insertRow(-1);
+
+    let texto;
+    for (let i = 0; i < funcionarios.length; i++) {
+        for (let j = 0; j < funcionarios[0].length; j++) {
+            let novaCelula = novaColuna.insertCell(j);
+            texto = document.createTextNode(funcionarios[i][j]);
+            novaCelula.appendChild (texto);
+        }
+    }
 }
