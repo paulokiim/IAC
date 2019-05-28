@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+	  <title>Avaliação de Funcionários</title>
+	  <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="index.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+
+		<div class="jumbotron">
+		  <div class="container text-center">
+			<h1><font FACE= "Oswald">Regras</font></h1>
+		  </div>
+		</div>
+
+		<div class="container-fluid bg-3 text-center" >
+		  <h3><font FACE= "Oswald">Nome do funcionário:</font></h3>
+		  <input type="text" placeholder="Nome do funcionário" id="input_nome">
+		</div>
+
+		<br>
+
+		<div class="container-fluid bg-3 text-center" >    
+		  <div class="row">
+				<h3><font FACE= "Oswald">O funcionário é pontual?</font></h3>
+				<h4><font  FACE="Oswald" >(1: atrasa muito, 3: atrasa com justificativa, 5: sempre pontual)</font></h4>
+		  </div>
+
+		  <div class="row">
+		  
+			  <div style="background-color: #507cdf; width: 10%; display: inline-block;">
+				<b>1</b><br>
+				<input type="radio" name="rapidez" value="1">
+			  </div>
+			  <div style="background-color: #507cdf; width: 10%; display: inline-block;">
+				<b>2</b><br>
+				<input type="radio" name="rapidez" value="2">
+			  </div>
+			  <div style="background-color: #507cdf; width: 10%; display: inline-block;">
+				<b>3</b><br>
+				<input type="radio" name="rapidez" value="3">
+			  </div>
+			  <div style="background-color: #507cdf; width: 10%; display: inline-block;">
+				<b>4</b><br>
+				<input type="radio" name="rapidez" value="4">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>5</b><br>
+				<input type="radio" name="rapidez" value="5">
+			  </div>
+			
+			</div>
+			
+			<div class="row">
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<textarea placeholder="Comentário" id="obs_rapidez"></textarea>
+		  </div>
+		</div>
+
+		<br>
+
+		<div class="container-fluid bg-3 text-center" >    
+		  <div class="row">
+			  <h3><font FACE= "Oswald">O funcionário segue a cultura da empresa?</font></h3>
+			  <h4><font FACE= "Oswald">(1: pouco, 3: em partes, 5: completamente)</font></h4>
+		  </div>
+
+		  <div class="row">
+		  
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>1</b><br>
+				<input type="radio" name="qualidade" value="1">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>2</b><br>
+				<input type="radio" name="qualidade" value="2">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>3</b><br>
+				<input type="radio" name="qualidade" value="3">
+			  </div>
+			
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>4</b><br>
+				<input type="radio" name="qualidade" value="4">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>5</b><br>
+				<input type="radio" name="qualidade" value="5">
+			  </div>
+			</div>
+			
+			<div class="row">
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<textarea placeholder="Comentário" id="obs_qualidade"></textarea>
+		  </div>
+		</div>
+
+		<br>
+
+		<div class="container-fluid bg-3 text-center" >    
+		  <div class="row">
+			  <h3><font FACE= "Oswald">O funcionário é organizado?</font></h3>
+			  <h4><font FACE= "Oswald">(1: pouquíssimo, 3: mediano, 5: muito)</font></h4>
+		  </div>
+
+		  <div class="row">
+		  
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>1</b><br>
+				<input type="radio" name="custo" value="1">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>2</b><br>
+				<input type="radio" name="custo" value="2">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>3</b><br>
+				<input type="radio" name="custo" value="3">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>4</b><br>
+				<input type="radio" name="custo" value="4">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>5</b><br>
+				<input type="radio" name="custo" value="5">
+			  </div>
+
+			
+			<div class="row">
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<textarea placeholder="Comentário" id="obs_custo"></textarea>
+		  </div>
+		</div>
+
+		<br>
+
+		<div class="container-fluid bg-3 text-center" >    
+		  <div class="row">
+			  <h3><font FACE= "Oswald">O funcionário obedece os superiores?</font></h3>
+			  <h4><font FACE= "Oswald">(1: apenas quando concorda, 3: reclama mas faz, 5: sempre obedece)</font></h4>
+		  </div>
+
+		  <div class="row">
+		  
+				<div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>1</b><br>
+				<input type="radio" name="problemas" value="1">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>2</b><br>
+				<input type="radio" name="problemas" value="2">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>3</b><br>
+				<input type="radio" name="problemas" value="3">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>4</b><br>
+				<input type="radio" name="problemas" value="4">
+			  </div>
+			  <div style="background-color:  #507cdf; width: 10%; display: inline-block;">
+				<b>5</b><br>
+				<input type="radio" name="problemas" value="5">
+			  </div>
+			</div>
+			
+			<div class="row">
+				<p><font FACE= "Oswald">Observaçao:</font></p>
+				<textarea placeholder="Comentário" id="obs_problemas"></textarea>
+		  </div>
+		</div>
+
+		<br>
+		<br>
+		
+		<div class="jumbotron">
+				<div class="container-fluid bg-3 text-center" >    
+						<div class="col-sm-4">
+								<p style="display:none">Gambiarra aplicada aqui</p>
+						</div>
+						<div class="col-sm-4">
+							<div>
+								<button id="func_nao" onclick="adicionaFuncionario() ; printaResultados()">Salvar</button>
+							</div>
+						</div>
+				</div>
+		</div>
+		<h1 style="text-align: center;"><strong><font FACE='Oswald'>Tabela Resultado da Avaliação</font></strong></h1>
+		<div class="tabelaResultado" id="result">
+			<table id="resultadoTabela">
+				<tr>
+						<th id="0">Funcionário</th>
+						<th id="1">Pontualidade </th>
+						<th id="2">Observacao Pontualidade</th>
+						<th id="3">Cultura </th>
+						<th id="4">Observacao Cultura</th>
+						<th id="5">Organização</th>
+						<th id="6">Observacao Organização</th>
+						<th id="7">Obediência </th>
+						<th id="8">Observacao Obediência</th>
+						<th id="9">Valor Total </th>
+						<th>Imprimir</th>
+				</tr>
+			</table>
+		</div>
+
+		<br><br>
+		
+		<div class="row" style="text-align: center">
+			<button onclick="geraPDFTodos()">Imprimir</button>
+		</div>
+
+		<br><br>
+
+		<footer class="container-fluid text-center">
+		  <p>© Galvão's Team 2019.</p>
+		</footer>
+
+	</body>
+</html>

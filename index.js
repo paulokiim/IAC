@@ -107,16 +107,16 @@ function geraPDFTodos () {
     let k = 1;
     for(let i = 0; i < auxFuncionarios.length; i ++) {
         for (let j = 0; j < auxFuncionarios[i].length; j++){
-            if (j === 0) doc.text(20, 30 + (k * 10), ' Nome: ' + String (auxFuncionarios[i][j]));
-            else if (j === 1) doc.text(20, 30 + (k * 10), ' Rapidez: ' + String (auxFuncionarios[i][j]));
-            else if (j === 2) doc.text(20, 30 + (k * 10), ' Obs Rapidez: ' + String (auxFuncionarios[i][j]));
-            else if (j === 3) doc.text(20, 30 + (k * 10), ' Qualidade: ' + String (auxFuncionarios[i][j]));
-            else if (j === 4) doc.text(20, 30 + (k * 10), ' Obs Qualidade: ' + String (auxFuncionarios[i][j]));
-            else if (j === 5) doc.text(20, 30 + (k * 10), ' Minimiza Custo: ' + String (auxFuncionarios[i][j]));
-            else if (j === 6) doc.text(20, 30 + (k * 10), ' Obs Minimiza Custo: ' + String (auxFuncionarios[i][j]));
-            else if (j === 7) doc.text(20, 30 + (k * 10), ' Fragmenta Problemas: ' + String (auxFuncionarios[i][j]));
-            else if (j === 8) doc.text(20, 30 + (k * 10), ' Obs Fragmenta Problemas: ' + String (auxFuncionarios[i][j]));
-            else if (j === 9) doc.text(20, 30 + (k * 10), ' Valor Total: ' + String (auxFuncionarios[i][j]));
+            if (j === 0) doc.text(20, 30 + (k * 10), document.getElementById(j).innerHTML + ': ' + String (auxFuncionarios[i][j]));
+            else if (j === 1) doc.text(20, 30 + (k * 10), document.getElementById(j).innerHTML + ': ' + String (auxFuncionarios[i][j]));
+            else if (j === 2) doc.text(20, 30 + (k * 10), document.getElementById(j).innerHTML + ': ' + String (auxFuncionarios[i][j]));
+            else if (j === 3) doc.text(20, 30 + (k * 10), document.getElementById(j).innerHTML + ': ' + String (auxFuncionarios[i][j]));
+            else if (j === 4) doc.text(20, 30 + (k * 10), document.getElementById(j).innerHTML + ': ' + String (auxFuncionarios[i][j]));
+            else if (j === 5) doc.text(20, 30 + (k * 10), document.getElementById(j).innerHTML + ': ' + String (auxFuncionarios[i][j]));
+            else if (j === 6) doc.text(20, 30 + (k * 10), document.getElementById(j).innerHTML + ': ' + String (auxFuncionarios[i][j]));
+            else if (j === 7) doc.text(20, 30 + (k * 10), document.getElementById(j).innerHTML + ': ' + String (auxFuncionarios[i][j]));
+            else if (j === 8) doc.text(20, 30 + (k * 10), document.getElementById(j).innerHTML + ': ' + String (auxFuncionarios[i][j]));
+            else if (j === 9) doc.text(20, 30 + (k * 10), document.getElementById(j).innerHTML + ': ' + String (auxFuncionarios[i][j]));
             k++;
         }
         k+=3;
